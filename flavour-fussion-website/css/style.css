@@ -2579,6 +2579,16 @@ form.enquiry > p:first-of-type {
   gap: 0.8rem;
   letter-spacing: 0.06em;
 }
+.footer-bottom a {
+  color: var(--turmeric-soft);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(229, 182, 85, 0.35);
+  transition: color 0.25s ease, border-color 0.25s ease;
+}
+.footer-bottom a:hover {
+  color: var(--paper);
+  border-bottom-color: var(--turmeric);
+}
 
 @media (max-width: 780px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 500px) { .footer-grid { grid-template-columns: 1fr; } }
@@ -2928,6 +2938,7 @@ form.enquiry > p:first-of-type {
   .js .nav-links.is-open li:nth-child(2) a { animation-delay: 0.12s; }
   .js .nav-links.is-open li:nth-child(3) a { animation-delay: 0.19s; }
   .js .nav-links.is-open li:nth-child(4) a { animation-delay: 0.26s; }
+  .js .nav-links.is-open li:nth-child(5) a { animation-delay: 0.33s; }
 }
 
 /* ============================================================
