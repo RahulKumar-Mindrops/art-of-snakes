@@ -40,7 +40,7 @@
   /* Headings that get per-word reveal. Hero heading reveals on load;
      other headings reveal on scroll. */
   var HEADING_SELECTORS =
-    ".hero-copy h1, .gift-hero .hero-copy h1, .section-head h1, .section-head h2:not(.has-mark), .showcase-copy h2";
+    ".hero-copy h1:not(.main-slider__title), .gift-hero .hero-copy h1:not(.main-slider__title), .section-head h1:not(.main-slider__title), .section-head h2:not(.main-slider__title):not(.has-mark), .showcase-copy h2:not(.main-slider__title)";
 
   /* Kept as an empty stub for now — mask reveal is handled inside the
      standard scroll-reveal path via ff-in-mask animation. */
