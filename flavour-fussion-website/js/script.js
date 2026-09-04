@@ -9,6 +9,8 @@
   var REVEAL = [
     ".section-head",
     ".product-card",
+    ".healthy-card",
+    ".quality-pill",
     ".gift-option",
     ".reason-item",
     ".spec-card",
@@ -24,17 +26,21 @@
     ".gift-hero > img",
     ".about-collage",
     ".about-copy",
+    ".about-flavour__main",
+    ".about-flavour__secondary",
+    ".about-flavour__badge",
+    ".about-feature",
     ".stat-item",
     ".experience-badge"
   ].join(",");
 
   var STAGGER_PARENTS =
-    ".product-grid, .gift-options, .reason-list, .contact-info, .footer-grid, .occasion-row, .stats-strip";
+    ".product-grid, .healthy-grid, .quality-pills, .about-flavour__features, .gift-options, .reason-list, .contact-info, .footer-grid, .occasion-row, .stats-strip";
 
   /* Headings that get per-word reveal. Hero heading reveals on load;
      other headings reveal on scroll. */
   var HEADING_SELECTORS =
-    ".hero-copy h1, .gift-hero .hero-copy h1, .section-head h1, .section-head h2, .showcase-copy h2";
+    ".hero-copy h1, .gift-hero .hero-copy h1, .section-head h1, .section-head h2:not(.has-mark), .showcase-copy h2";
 
   /* Kept as an empty stub for now — mask reveal is handled inside the
      standard scroll-reveal path via ff-in-mask animation. */
