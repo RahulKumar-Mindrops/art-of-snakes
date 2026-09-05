@@ -426,7 +426,7 @@ button { font-family: inherit; }
 .logo {
   display: inline-flex;
   align-items: center;
-  gap: 0.65rem;
+  gap: 0.7rem;
   flex-shrink: 0;
   line-height: 1;
   text-decoration: none;
@@ -446,19 +446,23 @@ button { font-family: inherit; }
 }
 .logo-text {
   display: flex;
-  flex-direction: column;
+  align-items: center;
   min-width: 0;
+  line-height: 1;
+  /* Optical nudge: Itim metrics sit slightly low next to the mark */
+  transform: translateY(-0.08em);
 }
 .logo-text strong {
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: clamp(1.05rem, 1.4vw, 1.2rem);
+  font-size: clamp(1.05rem, 1.4vw, 1.22rem);
   letter-spacing: -0.025em;
-  line-height: 1.05;
+  line-height: 1;
   color: var(--ink);
   white-space: nowrap;
 }
-.logo-text strong span {
+.logo-text strong span,
+.logo-text .logo-accent {
   color: var(--chilli);
   font-style: italic;
   font-weight: 600;
@@ -470,7 +474,8 @@ button { font-family: inherit; }
 .footer-brand .logo-text strong {
   color: var(--paper);
 }
-.footer-brand .logo-text strong span {
+.footer-brand .logo-text strong span,
+.footer-brand .logo-text .logo-accent {
   color: var(--turmeric-soft);
 }
 .site-header.is-stuck .logo img {
@@ -3067,6 +3072,9 @@ form.enquiry h3 { display: none; }
   gap: 2.5rem;
   padding-bottom: 3rem;
   border-bottom: 1px solid rgba(245, 230, 200, 0.12);
+}
+.footer-brand {
+  margin-top: -1.75rem;
 }
 .footer-brand .logo img { filter: none; }
 .footer-brand p {
