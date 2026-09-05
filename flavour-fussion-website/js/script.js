@@ -10,7 +10,7 @@
     ".section-head",
     ".product-card",
     ".healthy-card",
-    ".quality-pill",
+    ".range-filter",
     ".gift-option",
     ".reason-item",
     ".spec-card",
@@ -35,7 +35,7 @@
   ].join(",");
 
   var STAGGER_PARENTS =
-    ".product-track, .product-grid, .healthy-grid, .quality-pills, .about-flavour__features, .gift-options, .reason-list, .contact-info, .footer-grid, .occasion-row, .stats-strip";
+    ".product-track, .product-grid, .healthy-grid, .range-filters, .about-flavour__features, .gift-options, .reason-list, .contact-info, .footer-grid, .occasion-row, .stats-strip";
 
   /* Headings that get per-word reveal. Hero heading reveals on load;
      other headings reveal on scroll. */
@@ -473,6 +473,31 @@
     });
   }
 
+  /* ---------- Healthy range category filter ---------- */
+  function initRangeFilter() {
+    var filters = document.querySelectorAll(".range-filter");
+    var cards = document.querySelectorAll(".healthy-card[data-category]");
+    if (!filters.length || !cards.length) return;
+
+    each(filters, function (btn) {
+      btn.addEventListener("click", function () {
+        var filter = btn.getAttribute("data-filter") || "all";
+
+        each(filters, function (other) {
+          var active = other === btn;
+          other.classList.toggle("is-active", active);
+          other.setAttribute("aria-selected", active ? "true" : "false");
+        });
+
+        each(cards, function (card) {
+          var category = card.getAttribute("data-category");
+          var show = filter === "all" || category === filter;
+          card.classList.toggle("is-hidden", !show);
+        });
+      });
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     initPageEntrance();
     initNav();
@@ -487,5 +512,6 @@
     initHeroSlider();
     initHeroParallax();
     initProductCarousel();
+    initRangeFilter();
   });
 })();

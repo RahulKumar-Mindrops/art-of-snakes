@@ -412,113 +412,121 @@
   </section>
 
   <!-- ============ HEALTHY RANGE ============ -->
-  <section class="section section--panel healthy-range" id="healthy-range">
-    <div class="healthy-range__ambient" aria-hidden="true">
-      <img class="healthy-range__orb healthy-range__orb--a" src="assets/ingredient-grains-hand.jpg" alt="">
-      <img class="healthy-range__orb healthy-range__orb--b" src="assets/ingredient-rice.jpg" alt="">
-    </div>
+  <section class="section healthy-range" id="healthy-range">
     <div class="wrap">
       <div class="section-head section-head--center">
         <span class="kicker kicker--center">Our Healthy Range</span>
-        <h2 class="main-slider__title">Real Ingredients.<br>Real Energy.<br>Real You.</h2>
-        <p>Discover our thoughtfully crafted range of wholesome granolas and trail mixes, made with quality ingredients for delicious everyday snacking.</p>
+        <h2 class="main-slider__title">Latest Products</h2>
       </div>
 
-      <ul class="quality-pills" aria-label="Product qualities">
-        <li class="quality-pill">Gluten Free</li>
-        <li class="quality-pill">No Sugar Added</li>
-        <li class="quality-pill">Vegan</li>
-        <li class="quality-pill">Healthy Snacking</li>
-        <li class="quality-pill">Natural Ingredients</li>
-        <li class="quality-pill">Crunchy and Nutritious</li>
+      <ul class="range-filters" role="tablist" aria-label="Product categories">
+        <li><button type="button" class="range-filter is-active" role="tab" aria-selected="true" data-filter="all">All</button></li>
+        <li><button type="button" class="range-filter" role="tab" aria-selected="false" data-filter="granola">Granola</button></li>
+        <li><button type="button" class="range-filter" role="tab" aria-selected="false" data-filter="trail-mix">Trail Mix</button></li>
       </ul>
 
       <div class="healthy-grid">
-        <article class="healthy-card">
+        <article class="healthy-card" data-category="trail-mix">
           <div class="healthy-card__media">
             <img src="assets/healthy-power-crunch.jpg" alt="Power Crunch Mix granola with almonds and seeds" loading="lazy">
+            <div class="healthy-card__overlay">
+              <a href="contact.html" class="healthy-card__cta">Enquire Now</a>
+            </div>
           </div>
           <div class="healthy-card__body">
-            <span class="healthy-card__type">Trail Mix</span>
             <h3>Power Crunch Mix</h3>
-            <p>Rich, crunchy and guilt-free — nuts, millets and seeds in every bite.</p>
+            <p class="healthy-card__meta"><span>Trail Mix</span></p>
           </div>
         </article>
 
-        <article class="healthy-card">
+        <article class="healthy-card" data-category="granola">
           <div class="healthy-card__media">
             <img src="assets/healthy-no-sweetener.jpg" alt="No Sweetener Granola with cashews" loading="lazy">
+            <div class="healthy-card__overlay">
+              <a href="contact.html" class="healthy-card__cta">Enquire Now</a>
+            </div>
           </div>
           <div class="healthy-card__body">
-            <span class="healthy-card__type">Granola</span>
             <h3>No Sweetener Granola</h3>
-            <p>Naturally satisfying clusters with no refined sugar added.</p>
+            <p class="healthy-card__meta"><span>Granola</span></p>
           </div>
         </article>
 
-        <article class="healthy-card">
+        <article class="healthy-card" data-category="granola">
           <div class="healthy-card__media">
             <img src="assets/healthy-fruit-nut.jpg" alt="Fruit and Nut Mix Granola with dried cranberries" loading="lazy">
+            <div class="healthy-card__overlay">
+              <a href="contact.html" class="healthy-card__cta">Enquire Now</a>
+            </div>
           </div>
           <div class="healthy-card__body">
-            <span class="healthy-card__type">Granola</span>
             <h3>Fruit &amp; Nut Mix Granola</h3>
-            <p>Toasted grains with generous nuts and colourful dried fruit.</p>
+            <p class="healthy-card__meta"><span>Granola</span></p>
           </div>
         </article>
 
-        <article class="healthy-card">
+        <article class="healthy-card" data-category="granola">
           <div class="healthy-card__media">
             <img src="assets/healthy-chocolate.jpg" alt="Chocolate Granola in a white bowl" loading="lazy">
+            <div class="healthy-card__overlay">
+              <a href="contact.html" class="healthy-card__cta">Enquire Now</a>
+            </div>
           </div>
           <div class="healthy-card__body">
-            <span class="healthy-card__type">Granola</span>
             <h3>Chocolate Granola</h3>
-            <p>Cocoa-kissed clusters for wholesome indulgent snacking.</p>
+            <p class="healthy-card__meta"><span>Granola</span></p>
           </div>
         </article>
 
-        <article class="healthy-card">
+        <article class="healthy-card" data-category="granola">
           <div class="healthy-card__media">
             <img src="assets/healthy-dry-fruits.jpg" alt="Dry Fruits Overloaded Granola mix" loading="lazy">
+            <div class="healthy-card__overlay">
+              <a href="contact.html" class="healthy-card__cta">Enquire Now</a>
+            </div>
           </div>
           <div class="healthy-card__body">
-            <span class="healthy-card__type">Granola</span>
             <h3>Dry Fruits Overloaded Granola</h3>
-            <p>A hearty pour of dry fruits folded into crunchy granola.</p>
+            <p class="healthy-card__meta"><span>Granola</span></p>
           </div>
         </article>
 
-        <article class="healthy-card">
+        <article class="healthy-card" data-category="trail-mix">
           <div class="healthy-card__media">
             <img src="assets/healthy-tangy-tomato.jpg" alt="Tangy Tomato Twist Trail Mix in a bowl" loading="lazy">
+            <div class="healthy-card__overlay">
+              <a href="contact.html" class="healthy-card__cta">Enquire Now</a>
+            </div>
           </div>
           <div class="healthy-card__body">
-            <span class="healthy-card__type">Trail Mix</span>
             <h3>Tangy Tomato Twist Trail Mix</h3>
-            <p>Savoury crunch with a bright tomato-spice finish.</p>
+            <p class="healthy-card__meta"><span>Trail Mix</span></p>
           </div>
         </article>
 
-        <article class="healthy-card">
+        <article class="healthy-card" data-category="trail-mix">
           <div class="healthy-card__media">
             <img src="assets/healthy-south-indian.jpg" alt="South Indian Style Trail Mix with curry leaves" loading="lazy">
+            <div class="healthy-card__overlay">
+              <a href="contact.html" class="healthy-card__cta">Enquire Now</a>
+            </div>
           </div>
           <div class="healthy-card__body">
-            <span class="healthy-card__type">Trail Mix</span>
             <h3>South Indian Style Trail Mix</h3>
-            <p>Aromatic spices and curry-leaf crunch inspired by the South.</p>
+            <p class="healthy-card__meta"><span>Trail Mix</span></p>
           </div>
         </article>
 
-        <article class="healthy-card">
+        <article class="healthy-card" data-category="granola">
           <div class="healthy-card__media">
             <img src="assets/healthy-apple-cinnamon.jpg" alt="Apple Cinnamon Granola with raisins" loading="lazy">
+            <div class="healthy-card__overlay">
+              <a href="contact.html" class="healthy-card__cta">Enquire Now</a>
+            </div>
           </div>
           <div class="healthy-card__body">
-            <span class="healthy-card__type">Granola</span>
             <h3>Apple Cinnamon Granola</h3>
-            <p>Warm cinnamon notes with fruit-forward everyday energy.</p>
+            <p class="healthy-card__meta"><span>Granola</span></p>
           </div>
         </article>
       </div>
