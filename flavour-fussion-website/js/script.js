@@ -35,7 +35,7 @@
   ].join(",");
 
   var STAGGER_PARENTS =
-    ".product-grid, .healthy-grid, .quality-pills, .about-flavour__features, .gift-options, .reason-list, .contact-info, .footer-grid, .occasion-row, .stats-strip";
+    ".product-track, .product-grid, .healthy-grid, .quality-pills, .about-flavour__features, .gift-options, .reason-list, .contact-info, .footer-grid, .occasion-row, .stats-strip";
 
   /* Headings that get per-word reveal. Hero heading reveals on load;
      other headings reveal on scroll. */
@@ -395,6 +395,62 @@
     start();
   }
 
+  /* ---------- Product collection carousel ---------- */
+  function initProductCarousel() {
+    var root = document.querySelector("[data-product-carousel]");
+    if (!root) return;
+
+    var track = root.querySelector(".product-track");
+    var cards = root.querySelectorAll(".product-card");
+    var prevBtn = root.querySelector(".product-nav--prev");
+    var nextBtn = root.querySelector(".product-nav--next");
+    if (!track || !cards.length) return;
+
+    var index = 0;
+
+    function perView() {
+      if (window.matchMedia("(max-width: 620px)").matches) return 1;
+      if (window.matchMedia("(max-width: 980px)").matches) return 2;
+      return 3;
+    }
+
+    function maxIndex() {
+      return Math.max(0, cards.length - perView());
+    }
+
+    function update() {
+      var card = cards[0];
+      var styles = window.getComputedStyle(track);
+      var gap = parseFloat(styles.columnGap || styles.gap) || 0;
+      var step = card.getBoundingClientRect().width + gap;
+      var max = maxIndex();
+      if (index > max) index = max;
+      track.style.transform = "translateX(" + (-index * step) + "px)";
+      if (prevBtn) prevBtn.disabled = index <= 0;
+      if (nextBtn) nextBtn.disabled = index >= max;
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener("click", function () {
+        index = Math.max(0, index - 1);
+        update();
+      });
+    }
+    if (nextBtn) {
+      nextBtn.addEventListener("click", function () {
+        index = Math.min(maxIndex(), index + 1);
+        update();
+      });
+    }
+
+    window.addEventListener("resize", update);
+    if (window.ResizeObserver) {
+      var ro = new ResizeObserver(update);
+      ro.observe(root);
+    }
+    update();
+  }
+
   /* ---------- Hero pointer parallax (legacy art hero) ---------- */
   function initHeroParallax() {
     var art = document.querySelector(".hero-art");
@@ -430,5 +486,6 @@
     initCounters();
     initHeroSlider();
     initHeroParallax();
+    initProductCarousel();
   });
 })();
