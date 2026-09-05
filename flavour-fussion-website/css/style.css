@@ -935,21 +935,21 @@ button { font-family: inherit; }
   justify-content: center;
   padding: 0.92rem 2.15rem;
   border-radius: var(--radius-pill);
-  background: var(--hero-cta);
+  background: transparent;
   color: #fff;
   font-family: var(--font-body);
   font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  border: none;
-  box-shadow: 0 12px 28px rgba(100, 140, 30, 0.35);
+  border: 1.5px solid #fff;
+  box-shadow: none;
   transition: transform 0.35s var(--ease-premium), background 0.35s ease, box-shadow 0.35s ease;
 }
 .btn.btn-hero:hover {
-  background: #6f9c1c;
+  background: transparent;
   transform: scale(1.05);
-  box-shadow: 0 16px 34px rgba(100, 140, 30, 0.45);
+  box-shadow: none;
 }
 .btn.btn-hero::after,
 .btn.btn-hero::before { display: none !important; }
