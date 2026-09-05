@@ -41,21 +41,98 @@
 
 <main>
 
-  <!-- ============ HERO ============ -->
-  <section class="hero">
-    <div class="wrap hero-grid">
-      <div class="hero-copy">
-        <span class="kicker">Your Trusted Indian Export Partner</span>
-        <h1 class="main-slider__title">Bringing the<br>authentic flavours<br>of India</h1>
-        <p class="lede">We source and supply premium Makhana, Indian spices, dry fruits and saffron to importers, distributors, wholesalers and food businesses — with a focus on quality, hygiene and dependable delivery.</p>
-        <div class="hero-actions">
-          <a href="contact.html" class="btn btn-primary">Request a Quote</a>
-          <a href="products.html" class="btn btn-outline">View Product Range</a>
-        </div>
+  <!-- ============ HERO SLIDER ============ -->
+  <section class="hero hero-slider" aria-roledescription="carousel" aria-label="Flavour Fusion highlights">
+    <div class="hero-slider__viewport">
+      <div class="hero-slider__track">
+
+        <article class="hero-slide is-active" data-slide="0" aria-hidden="false">
+          <div class="hero-slide__media" aria-hidden="true">
+            <img src="assets/hero/slide-1b.jpg" alt="" loading="eager" fetchpriority="high">
+          </div>
+          <div class="wrap hero-slide__content">
+            <div class="hero-copy">
+              <span class="kicker hero-kicker">Art of Healthy Snacking</span>
+              <h1 class="main-slider__title">Real Ingredients.<br>Real Energy.<br>Real <span class="text-accent">You.</span></h1>
+              <p class="lede">Granola is a wholesome baked blend of oats, nuts, seeds and natural ingredients — lightly toasted for crunch. Crafted for breakfast, bowls and everyday energy.</p>
+              <div class="hero-actions">
+                <a href="#healthy-range" class="btn btn-hero">Explore More</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="hero-slide" data-slide="1" aria-hidden="true">
+          <div class="hero-slide__media" aria-hidden="true">
+            <img src="assets/hero/slide-2.jpg" alt="" loading="lazy">
+          </div>
+          <div class="wrap hero-slide__content">
+            <div class="hero-copy">
+              <span class="kicker hero-kicker">Why Choose Granola</span>
+              <h1 class="main-slider__title">Nourish Your Body,<br>Go <span class="text-accent">Natural!</span></h1>
+              <p class="lede">High in fibre, healthy fats and protein — with no refined sugar. Ideal for breakfast, post-workout fuel or wholesome snacking on the go.</p>
+              <div class="hero-actions">
+                <a href="products.html" class="btn btn-hero">View Product Range</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="hero-slide" data-slide="2" aria-hidden="true">
+          <div class="hero-slide__media" aria-hidden="true">
+            <img src="assets/hero/slide-3b.jpg" alt="" loading="lazy">
+          </div>
+          <div class="wrap hero-slide__content">
+            <div class="hero-copy">
+              <span class="kicker hero-kicker">Trail Mix &amp; Crunch</span>
+              <h1 class="main-slider__title">Crunchy Delight,<br>Guilt-<span class="text-accent">Free.</span></h1>
+              <p class="lede">From Power Crunch Mix to Tangy Tomato Twist and South Indian style trail mix — gluten free, vegan snacks made with real ingredients.</p>
+              <div class="hero-actions">
+                <a href="contact.html" class="btn btn-hero">Request a Quote</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
       </div>
-      <div class="hero-art">
-        <img src="assets/gift-box-jars.png" alt="Assortment of Flavour Fusion granola and dry fruit jars packed for export and gifting">
-        <div class="hero-tag"><strong><span data-count="7">7</span>+ product lines</strong>Makhana, spices, dry fruits &amp; saffron, sourced across India</div>
+    </div>
+
+    <button type="button" class="hero-nav hero-nav--prev" aria-label="Previous slide">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <button type="button" class="hero-nav hero-nav--next" aria-label="Next slide">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+
+    <div class="hero-features">
+      <div class="wrap hero-features__grid">
+        <div class="hero-feature">
+          <span class="hero-feature__icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3.5 12.5h11.2l2.1-4.2h2.7M5 17.5a1.6 1.6 0 100-3.2 1.6 1.6 0 000 3.2zm10.5 0a1.6 1.6 0 100-3.2 1.6 1.6 0 000 3.2zM3.5 12.5V8.2h8.8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <div>
+            <strong>Dependable Delivery</strong>
+            <span>Export-ready packing &amp; timely dispatch</span>
+          </div>
+        </div>
+        <div class="hero-feature">
+          <span class="hero-feature__icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 21s-6.5-4.2-6.5-9.2A4.5 4.5 0 0112 7.5a4.5 4.5 0 016.5 4.3C18.5 16.8 12 21 12 21z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M12 11.2v2.2M12 16h.01" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </span>
+          <div>
+            <strong>Natural Energy</strong>
+            <span>Breakfast, bowls &amp; post-workout fuel</span>
+          </div>
+        </div>
+        <div class="hero-feature">
+          <span class="hero-feature__icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.5"/><path d="M12 8v4l2.5 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M16.8 5.2A9.5 9.5 0 0120 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </span>
+          <div>
+            <strong>Quality Assured</strong>
+            <span>Hygienic processing &amp; checked lots</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>

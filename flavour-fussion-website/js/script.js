@@ -308,7 +308,94 @@
     });
   }
 
-  /* ---------- Hero pointer parallax ---------- */
+  /* ---------- Hero slider ---------- */
+  function initHeroSlider() {
+    var root = document.querySelector(".hero-slider");
+    if (!root) return;
+
+    var slides = root.querySelectorAll(".hero-slide");
+    var prevBtn = root.querySelector(".hero-nav--prev");
+    var nextBtn = root.querySelector(".hero-nav--next");
+    if (slides.length < 2) return;
+
+    var index = 0;
+    var timer = null;
+    var locked = false;
+    var AUTO_MS = 6500;
+
+    function goTo(next) {
+      if (locked) return;
+      next = (next + slides.length) % slides.length;
+      if (next === index) return;
+
+      locked = true;
+      var current = slides[index];
+      var incoming = slides[next];
+
+      current.classList.remove("is-active");
+      current.classList.add("is-leaving");
+      current.setAttribute("aria-hidden", "true");
+
+      incoming.classList.add("is-active");
+      incoming.setAttribute("aria-hidden", "false");
+
+      /* Restart Ken Burns + text entrance on the new slide */
+      var mediaImg = incoming.querySelector(".hero-slide__media img");
+      if (mediaImg && !reduced) {
+        mediaImg.style.animation = "none";
+        void mediaImg.offsetWidth;
+        mediaImg.style.animation = "";
+      }
+      each(incoming.querySelectorAll(".hero-copy > *"), function (el) {
+        el.style.animation = "none";
+        void el.offsetWidth;
+        el.style.animation = "";
+      });
+
+      window.setTimeout(function () {
+        current.classList.remove("is-leaving");
+        locked = false;
+      }, 850);
+
+      index = next;
+    }
+
+    function next() { goTo(index + 1); }
+    function prev() { goTo(index - 1); }
+
+    function stop() {
+      if (timer) {
+        window.clearInterval(timer);
+        timer = null;
+      }
+    }
+
+    function start() {
+      if (reduced) return;
+      stop();
+      timer = window.setInterval(next, AUTO_MS);
+    }
+
+    if (prevBtn) prevBtn.addEventListener("click", function () { prev(); start(); });
+    if (nextBtn) nextBtn.addEventListener("click", function () { next(); start(); });
+
+    root.addEventListener("mouseenter", stop);
+    root.addEventListener("mouseleave", start);
+    root.addEventListener("focusin", stop);
+    root.addEventListener("focusout", function (e) {
+      if (!root.contains(e.relatedTarget)) start();
+    });
+
+    document.addEventListener("keydown", function (e) {
+      if (!root.matches(":hover") && document.activeElement && !root.contains(document.activeElement)) return;
+      if (e.key === "ArrowLeft") { prev(); start(); }
+      if (e.key === "ArrowRight") { next(); start(); }
+    });
+
+    start();
+  }
+
+  /* ---------- Hero pointer parallax (legacy art hero) ---------- */
   function initHeroParallax() {
     var art = document.querySelector(".hero-art");
     if (!art || reduced) return;
@@ -341,6 +428,7 @@
     initReveal();
     initScrollEffects();
     initCounters();
+    initHeroSlider();
     initHeroParallax();
   });
 })();
