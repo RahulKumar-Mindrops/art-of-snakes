@@ -38,58 +38,79 @@
 
 <main>
 
-  <!-- ============ HERO ============ -->
-  <section class="section section--rose">
-    <div class="wrap gift-hero">
-      <div class="hero-copy">
-        <span class="kicker">🎁 Festive Gifting</span>
-        <h1 class="main-slider__title">Celebrate every<br>occasion with the<br>gift of goodness</h1>
-        <p class="lede">Make every celebration more special with thoughtfully curated healthy and premium gift hampers from Flavour Fusion.</p>
+  <!-- ============ HERO / STARTING SECTION ============ -->
+  <section class="section section--rose about-flavour gift-start" id="gift-start">
+    <div class="wrap about-flavour__grid">
+      <div class="about-flavour__visual">
+        <span class="about-flavour__shape about-flavour__shape--a" aria-hidden="true"></span>
+        <span class="about-flavour__shape about-flavour__shape--b" aria-hidden="true"></span>
+        <span class="about-flavour__shape about-flavour__shape--c" aria-hidden="true"></span>
+        <div class="about-flavour__main">
+          <img src="assets/gift-box-open.png" alt="Peacock-motif gift box lined with gold satin, holding granola jars">
+        </div>
+        <div class="about-flavour__secondary">
+          <img src="assets/gift-box-jars.png" alt="Four granola jars packed in a peacock-motif gift box">
+        </div>
+        <div class="about-flavour__frame" aria-hidden="true"></div>
+        <div class="about-flavour__badge">
+          <strong>Gift of</strong>
+          <span>Goodness</span>
+        </div>
+      </div>
+
+      <div class="about-flavour__copy">
+        <span class="kicker">Festive Gifting</span>
+        <h1 class="main-slider__title has-mark">Celebrate every<br>occasion with the<br><span class="text-mark">gift of goodness</span></h1>
+        <p class="about-flavour__lede">Thoughtfully curated healthy gift hampers — granolas, dry fruits and makhana — packed for Diwali, weddings, corporate and every celebration.</p>
+        <div class="about-flavour__features">
+          <article class="about-feature">
+            <div class="about-feature__icon" aria-hidden="true">✦</div>
+            <div>
+              <h3>Healthy &amp; Premium</h3>
+              <p>Granolas, dry-fruit mixes and makhana — wholesome treats beautifully packed and ready to share.</p>
+            </div>
+          </article>
+          <article class="about-feature">
+            <div class="about-feature__icon" aria-hidden="true">◆</div>
+            <div>
+              <h3>Personal to Corporate</h3>
+              <p>From single welcome bags to large-scale branded hampers — tailored to your occasion and quantity.</p>
+            </div>
+          </article>
+        </div>
         <div class="occasion-row">
           <span class="occasion-pill">Diwali</span>
           <span class="occasion-pill">Raksha Bandhan</span>
           <span class="occasion-pill">Christmas</span>
           <span class="occasion-pill">New Year</span>
           <span class="occasion-pill">Weddings</span>
-          <span class="occasion-pill">Corporate Celebrations</span>
-          <span class="occasion-pill">Special Occasions</span>
+          <span class="occasion-pill">Corporate</span>
         </div>
-        <div class="hero-actions">
-          <a href="contact.html" class="btn btn-primary">Enquire About Gifting</a>
-        </div>
-      </div>
-      <img src="assets/gift-box-open.png" alt="Peacock-motif pink gift box lined with gold satin, holding four granola jars">
-    </div>
-  </section>
-
-  <!-- ============ INTRO ============ -->
-  <section class="section">
-    <div class="wrap">
-      <div class="section-head section-head--wide">
-        <p>Our festive gifting range brings together delicious granolas, premium dry-fruit mixes, makhana and other wholesome treats, beautifully packed and ready to share with family, friends, clients and business associates. Whether it's Diwali, Raksha Bandhan, Christmas, New Year, weddings, corporate celebrations or special occasions, we create gifting options that combine taste, health and elegance.</p>
       </div>
     </div>
   </section>
 
   <!-- ============ GRANOLA SHOWCASE ============ -->
-  <section class="section section--panel">
-    <div class="wrap showcase">
-      <img src="assets/gift-box-jars.png" alt="Four granola jars labelled Oats Granola, Chocolate Granola, Dryfruits Overload Granola and Millets Magic with Raisins, packed in a pink gift box">
+  <section class="section section--panel gift-section">
+    <div class="wrap showcase showcase--gift">
+      <figure class="gift-media">
+        <img src="assets/gift-box-jars.png" alt="Four granola jars packed in a peacock-motif gift box" loading="lazy">
+      </figure>
       <div class="showcase-copy">
         <span class="kicker">Signature Hamper</span>
-        <h2 class="main-slider__title">Premium granola<br>gift boxes</h2>
-        <p>Four flavours in one box — Oats Granola, Chocolate Granola, Dryfruits Overload Granola and Millets Magic with Raisins — set in gold satin inside a hand-illustrated peacock-motif box.</p>
-        <p>Every jar is finished with a gold lid and a designed label, so the hamper is ready to gift straight out of the box.</p>
+        <h2 class="main-slider__title">Premium granola gift boxes</h2>
+        <p>Four flavours in one box — Oats Granola, Chocolate Granola, Dryfruits Overload Granola and Millets Magic with Raisins — set in gold satin inside a peacock-motif box.</p>
+        <a href="contact.html" class="btn btn-outline">Ask about this hamper</a>
       </div>
     </div>
   </section>
 
   <!-- ============ GIFTING OPTIONS ============ -->
-  <section class="section">
+  <section class="section gift-section">
     <div class="wrap">
-      <div class="section-head">
-        <span class="kicker">Our Gifting Options</span>
-        <h2 class="main-slider__title">Curated hampers<br>for every kind of<br>celebration</h2>
+      <div class="section-head section-head--center">
+        <span class="kicker kicker--center">Our Gifting Options</span>
+        <h2 class="main-slider__title">Curated hampers for every celebration</h2>
       </div>
       <div class="gift-options">
         <div class="gift-option"><h4>Premium Granola Gift Boxes</h4><p>Assorted granola jars, boxed and finished for gifting.</p></div>
@@ -98,32 +119,35 @@
         <div class="gift-option"><h4>Healthy Snack Hampers</h4><p>A wholesome mix of better-for-you snacking treats.</p></div>
         <div class="gift-option"><h4>Customised Corporate Gifts</h4><p>Branded hampers built around your company or event.</p></div>
         <div class="gift-option"><h4>Festive Gift Hampers</h4><p>Seasonal selections for Diwali, Christmas and New Year.</p></div>
-        <div class="gift-option"><h4>Bulk &amp; Customised Gifting Solutions</h4><p>Volume orders with flexible packaging, tailored to your event.</p></div>
       </div>
     </div>
   </section>
 
   <!-- ============ POWER CRUNCH SHOWCASE ============ -->
-  <section class="section section--panel">
-    <div class="wrap showcase">
+  <section class="section section--panel gift-section">
+    <div class="wrap showcase showcase--gift showcase--gift-reverse">
       <div class="showcase-copy">
         <span class="kicker">In the Jar</span>
-        <h2 class="main-slider__title">Power Crunch Mix —<br>our house<br>granola blend</h2>
-        <p>Made in-house with almonds, millet flakes, cashews and walnuts, our Power Crunch Mix comes in two blends — <strong>Dry Fruits Overloaded Granola</strong> and <strong>Millet Magic with Raisins</strong>.</p>
-        <p>100% gluten-free, vegan and made with no refined sugar — rich, crunchy and guilt-free.</p>
+        <h2 class="main-slider__title">Power Crunch Mix</h2>
+        <p>Made in-house with almonds, millet flakes, cashews and walnuts — <strong>Dry Fruits Overloaded Granola</strong> and <strong>Millet Magic with Raisins</strong>.</p>
+        <p>100% gluten-free, vegan and made with no refined sugar.</p>
       </div>
-      <img src="assets/power-crunch-2.png" alt="Jar of Flavour Fusion Power Crunch Mix, Millet Magic with Raisins granola">
+      <figure class="gift-media">
+        <img src="assets/gift-box-open.png" alt="Peacock-motif festive gift box with granola jars" loading="lazy">
+      </figure>
     </div>
   </section>
 
-  <!-- ============ CORPORATE / BAG SHOWCASE ============ -->
-  <section class="section">
-    <div class="wrap showcase">
-      <img src="assets/jute-hamper.png" alt="Jute tote gift hamper holding a granola jar and kraft pouches of dry fruits and makhana, finished with lace trim and a fabric flower">
+  <!-- ============ JUTE HAMPER ============ -->
+  <section class="section gift-section">
+    <div class="wrap showcase showcase--gift">
+      <figure class="gift-media">
+        <img src="assets/jute-hamper.png" alt="Jute tote gift hamper with granola jar and kraft pouches" loading="lazy">
+      </figure>
       <div class="showcase-copy">
         <span class="kicker">Make Your Gift Memorable</span>
-        <h2 class="main-slider__title">From elegant<br>personal gifts to<br>corporate hampers</h2>
-        <p>We can create gifting options to suit your occasion, budget and quantity requirements — from single jute welcome bags for wedding guests to large-scale corporate hamper orders.</p>
+        <h2 class="main-slider__title">Personal gifts to corporate hampers</h2>
+        <p>From single jute welcome bags for wedding guests to large-scale corporate orders — options for your occasion, budget and quantity.</p>
         <p><em>Thoughtfully packed. Beautifully presented. Made to delight.</em></p>
         <a href="contact.html" class="btn btn-primary">Start a Gifting Enquiry</a>
       </div>
@@ -131,10 +155,10 @@
   </section>
 
   <!-- ============ CTA ============ -->
-  <section class="section section--rose">
+  <section class="section section--rose gift-section gift-section--cta">
     <div class="wrap">
       <div class="cta-banner">
-        <h2 class="main-slider__title">Planning festive<br>or corporate<br>gifting?</h2>
+        <h2 class="main-slider__title">Planning festive or corporate gifting?</h2>
         <a href="contact.html" class="btn btn-outline">Get in Touch</a>
       </div>
     </div>

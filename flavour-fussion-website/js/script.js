@@ -24,6 +24,7 @@
     "form.enquiry",
     ".showcase > img",
     ".gift-hero > img",
+    ".gift-media img",
     ".about-collage",
     ".about-copy",
     ".about-flavour__main",

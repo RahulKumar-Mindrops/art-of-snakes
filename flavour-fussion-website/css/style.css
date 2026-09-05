@@ -1057,14 +1057,136 @@ button { font-family: inherit; }
 }
 
 /* ============================================================
-   Gifting hero (rose theme)
+   Gifting hero (rose theme) + starting section (about-flavour layout)
    ============================================================ */
+.gifting-page .gift-start.section {
+  padding-top: clamp(1.5rem, 3vw, 2.5rem);
+  padding-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+.gifting-page .gift-start.about-flavour {
+  background: var(--rose);
+  background-image:
+    radial-gradient(800px 320px at 0% 0%, rgba(255, 255, 255, 0.35), transparent 65%),
+    radial-gradient(640px 280px at 100% 90%, rgba(204, 154, 46, 0.12), transparent 60%);
+}
+.gifting-page .gift-start .about-flavour__grid {
+  align-items: stretch;
+  gap: clamp(1.75rem, 4vw, 3.25rem);
+}
+.gifting-page .gift-start .about-flavour__visual {
+  min-height: 0;
+  height: 100%;
+  padding: 0.35rem 1rem 1.75rem 0.25rem;
+}
+.gifting-page .gift-start .about-flavour__main,
+.gifting-page .gift-start .about-flavour__secondary {
+  background: rgba(255, 251, 245, 0.55);
+}
+.gifting-page .gift-start .about-flavour__main {
+  width: 78%;
+  aspect-ratio: auto;
+  height: 100%;
+  max-height: 100%;
+  min-height: 260px;
+}
+.gifting-page .gift-start .about-flavour__main img,
+.gifting-page .gift-start .about-flavour__secondary img {
+  object-fit: contain;
+  padding: 0.55rem;
+}
+.gifting-page .gift-start .about-flavour__secondary {
+  width: min(38%, 150px);
+  bottom: 10%;
+  border-width: 4px;
+}
+.gifting-page .gift-start .about-flavour__badge {
+  width: 96px;
+  height: 96px;
+  right: 4%;
+  bottom: 2%;
+  padding: 0.55rem;
+}
+.gifting-page .gift-start .about-flavour__badge strong {
+  font-size: 0.95rem;
+}
+.gifting-page .gift-start .about-flavour__badge span {
+  font-size: 0.52rem;
+}
+.gifting-page .gift-start .about-flavour__frame {
+  width: 68%;
+  top: 8%;
+}
+.gifting-page .gift-start .about-flavour__shape--a {
+  width: 150px;
+  height: 150px;
+}
+.gifting-page .gift-start .about-flavour__shape--b {
+  width: 110px;
+  height: 110px;
+}
+.gifting-page .gift-start .about-flavour__shape--c {
+  width: 64px;
+  height: 64px;
+}
+.gifting-page .gift-start .about-flavour__copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.gifting-page .gift-start .about-flavour__copy .main-slider__title {
+  font-size: clamp(1.7rem, 3.2vw, 2.45rem);
+  max-width: 14ch;
+  line-height: 1.05;
+}
+.gifting-page .gift-start .about-flavour__lede {
+  margin: 0.9rem 0 1.15rem;
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+.gifting-page .gift-start .occasion-row {
+  margin: 0.15rem 0 1.15rem;
+}
+.gifting-page .gift-start .about-flavour__features {
+  margin-bottom: 0.85rem;
+  gap: 0.75rem;
+}
+.gifting-page .gift-start .about-feature {
+  padding: 0.85rem 1rem;
+}
+.gifting-page .gift-start .about-feature__icon {
+  width: 40px;
+  height: 40px;
+  font-size: 0.95rem;
+}
+.gifting-page .gift-start .about-feature h3 {
+  font-size: 0.98rem;
+  margin-bottom: 0.2rem;
+}
+.gifting-page .gift-start .about-feature p {
+  font-size: 0.85rem;
+  line-height: 1.45;
+}
+
+@media (max-width: 960px) {
+  .gifting-page .gift-start .about-flavour__visual {
+    min-height: 340px;
+    height: auto;
+    max-height: 380px;
+  }
+  .gifting-page .gift-start .about-flavour__main {
+    min-height: 240px;
+    height: auto;
+    aspect-ratio: 1 / 1.05;
+    max-height: 300px;
+  }
+}
+
 .section--rose .gift-hero {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: clamp(2rem, 5vw, 4rem);
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: clamp(1.5rem, 4vw, 3rem);
   align-items: center;
-  padding: clamp(3rem, 6vw, 5rem) 0;
+  padding: clamp(1.25rem, 2.5vw, 2rem) 0 0;
   position: relative;
 }
 .gift-hero .hero-copy {
@@ -1074,32 +1196,49 @@ button { font-family: inherit; }
 .gift-hero .hero-copy .kicker::before { background: var(--turmeric); }
 .gift-hero .hero-copy h1 {
   color: var(--ink);
-  font-size: clamp(2.3rem, 4.6vw, 3.6rem);
-  max-width: 12ch;
+  font-size: clamp(1.85rem, 3.6vw, 2.75rem);
+  max-width: 16ch;
   font-optical-sizing: auto;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.045em;
-  line-height: 0.98;
+  letter-spacing: 0.04em;
+  line-height: 1.05;
 }
 .gift-hero .hero-copy p.lede {
   color: var(--ink-muted);
-  margin-top: 1.25rem;
-  font-size: 1.02rem;
+  margin-top: 1rem;
+  font-size: 0.98rem;
   max-width: 44ch;
-  line-height: 1.75;
+  line-height: 1.65;
 }
-.gift-hero > img {
-  border-radius: var(--radius-l);
-  border: 3px solid var(--surface);
-  box-shadow: var(--shadow-hero);
+.gift-hero > img,
+.gift-hero .gift-media {
+  margin: 0;
+  justify-self: center;
+}
+.gift-hero > img,
+.gift-hero .gift-media img {
+  display: block;
   width: 100%;
-  object-fit: cover;
+  max-width: 340px;
+  max-height: 340px;
+  margin-inline: auto;
+  object-fit: contain;
+  border-radius: var(--radius-l);
+  border: none;
+  box-shadow: var(--shadow-soft);
+  background: transparent;
 }
 
 @media (max-width: 860px) {
   .section--rose .gift-hero { grid-template-columns: 1fr; }
+  .gift-hero .gift-media,
   .gift-hero > img { order: -1; }
+  .gift-hero .gift-media img,
+  .gift-hero > img {
+    max-width: 260px;
+    max-height: 260px;
+  }
 }
 
 /* ============================================================
@@ -2210,93 +2349,156 @@ button { font-family: inherit; }
 }
 
 /* ============================================================
-   Gifting page — gift options + occasion pills
+   Gifting page — compact images, options, occasions
    ============================================================ */
+.gifting-page .gift-section {
+  padding: clamp(2.5rem, 4.5vw, 3.75rem) 0;
+}
+.gifting-page .gift-section--cta {
+  padding-top: clamp(2rem, 3.5vw, 3rem);
+  padding-bottom: clamp(2rem, 3.5vw, 3rem);
+}
+.gifting-page .section-head {
+  margin-bottom: 1.75rem;
+}
+.gifting-page .section-head--center {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+.gifting-page .section-head--center .main-slider__title {
+  max-width: 18ch;
+  margin-inline: auto;
+  font-size: clamp(1.65rem, 3vw, 2.35rem);
+}
+
+.showcase--gift {
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: clamp(1.5rem, 3.5vw, 2.75rem);
+}
+.showcase--gift-reverse {
+  grid-template-columns: 1.15fr 0.85fr;
+}
+.showcase--gift .gift-media {
+  margin: 0;
+  justify-self: center;
+}
+.showcase--gift .gift-media img {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  max-height: 300px;
+  margin-inline: auto;
+  object-fit: contain;
+  border: none;
+  border-radius: var(--radius-m);
+  box-shadow: var(--shadow-soft);
+  background: transparent;
+}
+.gift-jar-pair {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+.gift-media--jar img {
+  max-width: 150px !important;
+  max-height: 220px !important;
+}
+
 .gift-options {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.75rem;
+  gap: 1rem;
 }
 .gift-option {
   background: var(--surface);
-  border-radius: var(--radius-l);
-  padding: 2rem 1.85rem;
+  border-radius: var(--radius-m);
+  padding: 1.25rem 1.2rem;
   border: 1px solid var(--cream-line);
   box-shadow: var(--shadow-soft);
   position: relative;
   overflow: hidden;
-  transition: transform 0.4s var(--ease-premium), box-shadow 0.4s ease, border-color 0.4s ease;
+  transition: transform 0.35s var(--ease-premium), box-shadow 0.35s ease, border-color 0.35s ease;
 }
 .gift-option::before {
   content: "";
   position: absolute;
-  top: 1.5rem; right: 1.5rem;
-  width: 32px; height: 32px;
-  border-radius: 50%;
-  border: 1px dashed var(--gold-line);
-  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23CC9A2E' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M7 17L17 7M17 7H8M17 7v9'/></svg>") center/16px no-repeat;
-  transition: transform 0.4s var(--ease-premium), background-color 0.3s ease;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--chilli), var(--turmeric));
 }
-.gift-option::after {
-  content: "";
-  position: absolute;
-  right: -60px; bottom: -60px;
-  width: 160px; height: 160px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(204, 154, 46, 0.16), transparent 70%);
-  transform: scale(0);
-  transition: transform 0.6s var(--ease-premium);
-  pointer-events: none;
-}
+.gift-option::after { display: none; }
 .gift-option h4 {
-  font-size: 1.1rem;
-  margin-bottom: 0.6rem;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  margin: 0 0 0.4rem;
   color: var(--ink);
-  padding-right: 3rem;
-  transition: color 0.3s ease;
+  letter-spacing: 0;
+  text-transform: none;
+  font-weight: 600;
+  padding-right: 0;
 }
-.gift-option p { font-size: 0.94rem; color: var(--ink-muted); line-height: 1.65; }
+.gift-option p {
+  font-size: 0.88rem;
+  color: var(--ink-muted);
+  line-height: 1.55;
+  margin: 0;
+}
 .gift-option:hover {
-  transform: translateY(-6px);
+  transform: translateY(-4px);
   box-shadow: var(--shadow-lift);
   border-color: var(--gold-line);
 }
-.gift-option:hover::before { transform: rotate(45deg); }
-.gift-option:hover::after { transform: scale(1); }
 .gift-option:hover h4 { color: var(--chilli); }
-
-@media (max-width: 960px) { .gift-options { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 620px) { .gift-options { grid-template-columns: 1fr; } }
 
 .occasion-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.7rem;
-  margin-top: 1.8rem;
+  gap: 0.45rem;
+  margin: 1.15rem 0 1.35rem;
 }
 .occasion-pill {
-  border: 1px solid rgba(165, 57, 31, 0.25);
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.75rem;
   border-radius: var(--radius-pill);
-  padding: 0.6rem 1.35rem;
-  font-size: 0.82rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  background: var(--surface);
+  background: rgba(255, 251, 245, 0.85);
+  border: 1px solid rgba(165, 57, 31, 0.18);
   color: var(--ink);
-  transition:
-    transform 0.35s var(--ease-out-back),
-    background 0.35s ease,
-    color 0.35s ease,
-    border-color 0.35s ease,
-    box-shadow 0.35s ease;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: border-color 0.25s ease, color 0.25s ease;
 }
 .occasion-pill:hover {
-  background: var(--chilli);
-  color: #fff;
   border-color: var(--chilli);
-  transform: translateY(-3px) scale(1.03);
-  box-shadow: 0 10px 22px rgba(165, 57, 31, 0.35);
+  color: var(--chilli);
+  background: rgba(255, 251, 245, 0.95);
+  transform: none;
+  box-shadow: none;
+}
+
+@media (max-width: 960px) {
+  .gift-options { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 860px) {
+  .showcase--gift,
+  .showcase--gift-reverse { grid-template-columns: 1fr; }
+  .showcase--gift .gift-media { order: -1; }
+  .showcase--gift .gift-media img {
+    max-width: 240px;
+    max-height: 240px;
+  }
+  .gift-media--jar img {
+    max-width: 120px !important;
+    max-height: 180px !important;
+  }
+}
+@media (max-width: 620px) {
+  .gift-options { grid-template-columns: 1fr; }
 }
 
 /* ============================================================
@@ -3156,6 +3358,7 @@ form.enquiry h3 { display: none; }
 .js form.enquiry,
 .js .showcase > img,
 .js .gift-hero > img,
+.js .gift-media img,
 .js .about-collage,
 .js .about-copy,
 .js .about-flavour__main,
@@ -3181,6 +3384,7 @@ form.enquiry h3 { display: none; }
 .js .about-flavour__secondary.is-revealed { animation-name: ff-in-right; }
 .js .cta-banner.is-revealed,
 .js .gift-hero > img.is-revealed,
+.js .gift-media img.is-revealed,
 .js .experience-badge.is-revealed,
 .js .about-flavour__badge.is-revealed { animation-name: ff-in-zoom; }
 .js .occasion-pill.is-revealed { animation-name: ff-in-pop; }
@@ -3205,7 +3409,8 @@ form.enquiry h3 { display: none; }
 
 /* Image mask reveal — now merged into standard reveal path */
 .js .showcase > img.is-revealed,
-.js .gift-hero > img.is-revealed {
+.js .gift-hero > img.is-revealed,
+.js .gift-media img.is-revealed {
   animation: ff-mask-reveal 1.1s var(--ease-premium) both;
 }
 
@@ -3288,6 +3493,7 @@ form.enquiry h3 { display: none; }
   .js form.enquiry,
   .js .showcase > img,
   .js .gift-hero > img,
+  .js .gift-media img,
   .js .about-collage,
   .js .about-copy,
   .js .about-flavour__main,
