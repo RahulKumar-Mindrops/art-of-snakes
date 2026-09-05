@@ -1025,8 +1025,12 @@ button { font-family: inherit; }
   justify-content: center;
   color: #ff8a00;
   background: transparent;
+  line-height: 0;
+  margin-top: 0;
 }
 .hero-feature__icon svg {
+  display: block;
+  flex-shrink: 0;
   color: #ff8a00;
   stroke: #ff8a00;
 }
@@ -1039,7 +1043,7 @@ button { font-family: inherit; }
   line-height: 1.25;
   color: #fff;
 }
-.hero-feature span {
+.hero-feature > div > span {
   display: block;
   margin-top: 0.2rem;
   font-size: 0.78rem;
@@ -1101,7 +1105,7 @@ button { font-family: inherit; }
   .hero-feature {
     gap: 0.75rem;
   }
-  .hero-feature span {
+  .hero-feature > div > span {
     display: none;
   }
   .hero-feature strong {
