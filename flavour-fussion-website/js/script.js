@@ -1,4 +1,4 @@
-/* Flavour Fusion — shared behaviour (Tastebud-inspired redesign) */
+/* Flavour Fussion — shared behaviour (Tastebud-inspired redesign) */
 
 (function () {
   "use strict";

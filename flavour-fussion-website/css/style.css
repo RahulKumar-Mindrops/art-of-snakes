@@ -1,5 +1,5 @@
 /* ============================================================
-   Flavour Fusion — brand UI (DOCUMENTATION.md design system)
+   Flavour Fussion — brand UI (DOCUMENTATION.md design system)
    Fonts: Itim (headings/titles) + Helvetica Neue (body)
    Colours: ink / paper / chilli / turmeric / coriander / rose
    ============================================================ */
@@ -1905,7 +1905,7 @@ button { font-family: inherit; }
 @media (max-width: 720px) { .reason-list { grid-template-columns: 1fr; } }
 
 /* ============================================================
-   About Flavour Fusion (storytelling, above Healthy Range)
+   About Flavour Fussion (storytelling, above Healthy Range)
    ============================================================ */
 .text-mark {
   font-family: var(--font-display);
@@ -2758,12 +2758,16 @@ button { font-family: inherit; }
 .spec-slider__dots {
   position: absolute;
   left: 50%;
-  bottom: 14px;
+  bottom: 26px;
   transform: translateX(-50%);
-  z-index: 3;
+  z-index: 4;
   display: flex;
   gap: 8px;
   align-items: center;
+  padding: 0.35rem 0.55rem;
+  border-radius: 999px;
+  background: rgba(36, 28, 19, 0.4);
+  backdrop-filter: blur(6px);
 }
 .spec-slider__dot {
   width: 8px;
