@@ -2631,6 +2631,68 @@ button { font-family: inherit; }
 .spec-card:hover .spec-media::after { opacity: 0.8; }
 .spec-card:hover .spec-media::before { inset: 20px; opacity: 0.9; }
 
+/* Simple fade slider inside product media (saffron) */
+.spec-media--slider {
+  display: block;
+}
+.spec-slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+}
+.spec-slider__slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.55s ease, visibility 0.55s ease;
+  z-index: 0;
+}
+.spec-slider__slide.is-active {
+  opacity: 1;
+  visibility: visible;
+  z-index: 1;
+}
+.spec-media--slider .spec-slider__slide img {
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  object-fit: cover;
+  display: block;
+}
+.spec-card:hover .spec-media--slider .spec-slider__slide img {
+  transform: none;
+}
+.spec-slider__dots {
+  position: absolute;
+  left: 50%;
+  bottom: 14px;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.spec-slider__dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.45);
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+.spec-slider__dot.is-active {
+  background: #fff;
+  transform: scale(1.15);
+}
+.spec-slider__dot:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
 /* Body (details) side */
 .spec-body {
   padding: clamp(2rem, 3vw, 2.8rem);
@@ -2780,6 +2842,8 @@ button { font-family: inherit; }
   .spec-card { grid-template-columns: 1fr; }
   .spec-media { min-height: 240px; border-right: none; border-bottom: 1px solid var(--cream-line); }
   .spec-media img { min-height: 240px; }
+  .spec-slider,
+  .spec-media--slider .spec-slider__slide img { min-height: 240px; }
   .spec-list { grid-template-columns: 1fr; gap: 0; }
   .spec-list > div:nth-last-child(2):nth-child(odd) { border-bottom: 1px dashed var(--cream-line); }
 }
@@ -3404,6 +3468,8 @@ form.enquiry h3 { display: none; }
     border-bottom: 1px solid var(--cream-line);
   }
   .spec-media img { min-height: 220px; }
+  .spec-slider,
+  .spec-media--slider .spec-slider__slide img { min-height: 220px; }
   .spec-list { grid-template-columns: 1fr; gap: 0; }
 
   .footer-brand { margin-top: 0; }
@@ -3521,6 +3587,8 @@ form.enquiry h3 { display: none; }
   .spec-body { padding: 1.25rem; }
   .spec-media,
   .spec-media img { min-height: 200px; }
+  .spec-slider,
+  .spec-media--slider .spec-slider__slide img { min-height: 200px; }
 
   .footer-brand p {
     font-size: 0.88rem;

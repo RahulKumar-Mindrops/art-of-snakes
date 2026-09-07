@@ -249,7 +249,28 @@
         <h2 class="main-slider__title">Premium<br>saffron</h2>
       </div>
       <div class="spec-card">
-        <div class="spec-media"><img src="assets/product-saffron.png" alt="Premium saffron threads in a crystal dish"></div>
+        <div class="spec-media spec-media--slider" data-spec-slider aria-roledescription="carousel" aria-label="Premium saffron photos">
+          <div class="spec-slider">
+            <div class="spec-slider__slide is-active">
+              <img src="assets/product-saffron.png" alt="Premium saffron threads in a crystal dish">
+            </div>
+            <div class="spec-slider__slide" aria-hidden="true">
+              <img src="assets/product-saffron-1.jpg" alt="Saffron crocus flowers with red stigmas in indoor cultivation" loading="lazy">
+            </div>
+            <div class="spec-slider__slide" aria-hidden="true">
+              <img src="assets/product-saffron-2.jpg" alt="Dense purple saffron crocus blooms under grow lights" loading="lazy">
+            </div>
+            <div class="spec-slider__slide" aria-hidden="true">
+              <img src="assets/product-saffron-3.jpg" alt="Blooming saffron flowers showing crimson stigmas" loading="lazy">
+            </div>
+          </div>
+          <div class="spec-slider__dots" role="tablist" aria-label="Saffron photo slides">
+            <button type="button" class="spec-slider__dot is-active" aria-label="Show slide 1" aria-selected="true"></button>
+            <button type="button" class="spec-slider__dot" aria-label="Show slide 2" aria-selected="false"></button>
+            <button type="button" class="spec-slider__dot" aria-label="Show slide 3" aria-selected="false"></button>
+            <button type="button" class="spec-slider__dot" aria-label="Show slide 4" aria-selected="false"></button>
+          </div>
+        </div>
         <div class="spec-body">
           <span class="origin">Saffron</span>
           <h3>Premium Saffron</h3>

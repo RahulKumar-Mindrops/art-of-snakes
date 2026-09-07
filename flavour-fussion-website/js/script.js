@@ -499,6 +499,74 @@
     });
   }
 
+  /* ---------- Spec media slider (products saffron) ---------- */
+  function initSpecSliders() {
+    var roots = document.querySelectorAll("[data-spec-slider]");
+    if (!roots.length) return;
+
+    each(roots, function (root) {
+      var slides = root.querySelectorAll(".spec-slider__slide");
+      var dots = root.querySelectorAll(".spec-slider__dot");
+      if (slides.length < 2) return;
+
+      var index = 0;
+      var timer = null;
+      var AUTO_MS = 4500;
+
+      function goTo(next) {
+        next = (next + slides.length) % slides.length;
+        if (next === index) return;
+
+        slides[index].classList.remove("is-active");
+        slides[index].setAttribute("aria-hidden", "true");
+        if (dots[index]) {
+          dots[index].classList.remove("is-active");
+          dots[index].setAttribute("aria-selected", "false");
+        }
+
+        slides[next].classList.add("is-active");
+        slides[next].setAttribute("aria-hidden", "false");
+        if (dots[next]) {
+          dots[next].classList.add("is-active");
+          dots[next].setAttribute("aria-selected", "true");
+        }
+
+        index = next;
+      }
+
+      function next() { goTo(index + 1); }
+
+      function stop() {
+        if (timer) {
+          window.clearInterval(timer);
+          timer = null;
+        }
+      }
+
+      function start() {
+        if (reduced) return;
+        stop();
+        timer = window.setInterval(next, AUTO_MS);
+      }
+
+      each(dots, function (dot, i) {
+        dot.addEventListener("click", function () {
+          goTo(i);
+          start();
+        });
+      });
+
+      root.addEventListener("mouseenter", stop);
+      root.addEventListener("mouseleave", start);
+      root.addEventListener("focusin", stop);
+      root.addEventListener("focusout", function (e) {
+        if (!root.contains(e.relatedTarget)) start();
+      });
+
+      start();
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     initPageEntrance();
     initNav();
@@ -514,5 +582,6 @@
     initHeroParallax();
     initProductCarousel();
     initRangeFilter();
+    initSpecSliders();
   });
 })();
