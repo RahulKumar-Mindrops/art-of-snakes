@@ -24,7 +24,7 @@
     "form.enquiry",
     ".showcase > img",
     ".gift-hero > img",
-    ".gift-media img",
+    ".gift-media",
     ".about-collage",
     ".about-copy",
     ".about-flavour__main",
@@ -499,19 +499,27 @@
     });
   }
 
-  /* ---------- Spec media slider (products saffron) ---------- */
+  /* ---------- Spec media slider (products saffron + gift boxes) ---------- */
   function initSpecSliders() {
     var roots = document.querySelectorAll("[data-spec-slider]");
     if (!roots.length) return;
 
     each(roots, function (root) {
-      var slides = root.querySelectorAll(".spec-slider__slide");
+      var track = root.querySelector(".spec-slider");
+      var slides = track
+        ? track.querySelectorAll(".spec-slider__slide")
+        : root.querySelectorAll(".spec-slider__slide");
       var dots = root.querySelectorAll(".spec-slider__dot");
+      var prevBtn = root.querySelector(".gift-slider__nav--prev");
+      var nextBtn = root.querySelector(".gift-slider__nav--next");
       if (slides.length < 2) return;
 
       var index = 0;
       var timer = null;
-      var AUTO_MS = 4500;
+      var AUTO_MS = root.classList.contains("about-flavour__main--slider") ||
+        root.classList.contains("gift-media--slider")
+        ? 3200
+        : 4500;
 
       function goTo(next) {
         next = (next + slides.length) % slides.length;
@@ -535,6 +543,7 @@
       }
 
       function next() { goTo(index + 1); }
+      function prev() { goTo(index - 1); }
 
       function stop() {
         if (timer) {
@@ -550,14 +559,31 @@
       }
 
       each(dots, function (dot, i) {
-        dot.addEventListener("click", function () {
+        dot.addEventListener("click", function (e) {
+          e.preventDefault();
           goTo(i);
           start();
         });
       });
 
-      root.addEventListener("mouseenter", stop);
-      root.addEventListener("mouseleave", start);
+      if (prevBtn) {
+        prevBtn.addEventListener("click", function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          prev();
+          start();
+        });
+      }
+      if (nextBtn) {
+        nextBtn.addEventListener("click", function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          next();
+          start();
+        });
+      }
+
+      /* Keep autoplay running — only pause while focus is inside controls */
       root.addEventListener("focusin", stop);
       root.addEventListener("focusout", function (e) {
         if (!root.contains(e.relatedTarget)) start();

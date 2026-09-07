@@ -43,19 +43,33 @@
   <section class="section section--rose about-flavour gift-start" id="gift-start">
     <div class="wrap about-flavour__grid">
       <div class="about-flavour__visual">
-        <span class="about-flavour__shape about-flavour__shape--a" aria-hidden="true"></span>
-        <span class="about-flavour__shape about-flavour__shape--b" aria-hidden="true"></span>
-        <span class="about-flavour__shape about-flavour__shape--c" aria-hidden="true"></span>
-        <div class="about-flavour__main">
-          <img src="assets/gift-box-open.png" alt="Peacock-motif gift box lined with gold satin, holding granola jars">
-        </div>
-        <div class="about-flavour__secondary">
-          <img src="assets/gift-box-jars.png" alt="Four granola jars packed in a peacock-motif gift box">
-        </div>
-        <div class="about-flavour__frame" aria-hidden="true"></div>
-        <div class="about-flavour__badge">
-          <strong>Gift of</strong>
-          <span>Goodness</span>
+        <div class="about-flavour__main about-flavour__main--slider" data-spec-slider aria-roledescription="carousel" aria-label="Gift box photos">
+          <div class="spec-slider gift-start-slider">
+            <div class="spec-slider__slide is-active">
+              <img src="assets/gift-box-open.png" alt="Peacock-motif gift box lined with gold satin, holding granola jars">
+            </div>
+            <div class="spec-slider__slide" aria-hidden="true">
+              <img src="assets/gift-box-jars.png" alt="Four granola jars packed in a peacock-motif gift box">
+            </div>
+            <div class="spec-slider__slide" aria-hidden="true">
+              <img src="assets/gift-box-spices.jpg" alt="Premium wooden spice gift box with cinnamon, cardamom, cloves and star anise">
+            </div>
+            <div class="spec-slider__slide" aria-hidden="true">
+              <img src="assets/gift-box-nuts.jpg" alt="Signature nuts collection gift packs with cashews, almonds, pistachios and raisins">
+            </div>
+          </div>
+          <button type="button" class="gift-slider__nav gift-slider__nav--prev" aria-label="Previous gift photo">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <button type="button" class="gift-slider__nav gift-slider__nav--next" aria-label="Next gift photo">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="spec-slider__dots gift-start-slider__dots" role="tablist" aria-label="Gift box photo slides">
+            <button type="button" class="spec-slider__dot is-active" aria-label="Show slide 1" aria-selected="true"></button>
+            <button type="button" class="spec-slider__dot" aria-label="Show slide 2" aria-selected="false"></button>
+            <button type="button" class="spec-slider__dot" aria-label="Show slide 3" aria-selected="false"></button>
+            <button type="button" class="spec-slider__dot" aria-label="Show slide 4" aria-selected="false"></button>
+          </div>
         </div>
       </div>
 
@@ -63,22 +77,6 @@
         <span class="kicker">Festive Gifting</span>
         <h1 class="main-slider__title has-mark">Celebrate every<br>occasion with the<br><span class="text-mark">gift of goodness</span></h1>
         <p class="about-flavour__lede">Thoughtfully curated healthy gift hampers — granolas, dry fruits and makhana — packed for Diwali, weddings, corporate and every celebration.</p>
-        <div class="about-flavour__features">
-          <article class="about-feature">
-            <div class="about-feature__icon" aria-hidden="true">✦</div>
-            <div>
-              <h3>Healthy &amp; Premium</h3>
-              <p>Granolas, dry-fruit mixes and makhana — wholesome treats beautifully packed and ready to share.</p>
-            </div>
-          </article>
-          <article class="about-feature">
-            <div class="about-feature__icon" aria-hidden="true">◆</div>
-            <div>
-              <h3>Personal to Corporate</h3>
-              <p>From single welcome bags to large-scale branded hampers — tailored to your occasion and quantity.</p>
-            </div>
-          </article>
-        </div>
         <div class="occasion-row">
           <span class="occasion-pill">Diwali</span>
           <span class="occasion-pill">Raksha Bandhan</span>
@@ -87,6 +85,7 @@
           <span class="occasion-pill">Weddings</span>
           <span class="occasion-pill">Corporate</span>
         </div>
+        <a href="contact.html" class="btn btn-primary">Request a Quote</a>
       </div>
     </div>
   </section>
